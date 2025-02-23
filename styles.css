@@ -32,7 +32,7 @@ nav {
 .logo {
     font-size: 24px;
     font-weight: bold;
-    color: #6516FF;
+    color: white;
     display: flex;
     align-items: center;
     gap: 10px;
@@ -68,16 +68,18 @@ nav a:hover {
 }
 
 .cta-button {
-    background-color: #6516FF;
-    padding: 10px 20px;
+    background: linear-gradient(135deg, #6516FF 0%, #8444FF 100%);
+    padding: 12px 24px;
     border-radius: 25px;
     color: white;
     font-weight: 600;
+    box-shadow: 0 4px 15px rgba(101, 22, 255, 0.3);
 }
 
 .cta-button:hover {
-    background-color: #5612e0;
+    background: linear-gradient(135deg, #5612e0 0%, #7333FF 100%);
     color: white;
+    box-shadow: 0 6px 20px rgba(101, 22, 255, 0.4);
 }
 
 .cta-button i {
@@ -133,17 +135,19 @@ nav a:hover {
 .app-store-button {
     display: inline-flex;
     align-items: center;
-    background-color: #6516FF;
+    background: linear-gradient(135deg, #6516FF 0%, #8444FF 100%);
     color: white;
     text-decoration: none;
-    padding: 12px 24px;
+    padding: 14px 28px;
     border-radius: 12px;
-    transition: transform 0.3s ease, background-color 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 15px rgba(101, 22, 255, 0.3);
 }
 
 .app-store-button:hover {
     transform: translateY(-2px);
-    background-color: #5612e0;
+    box-shadow: 0 6px 20px rgba(101, 22, 255, 0.4);
+    background: linear-gradient(135deg, #5612e0 0%, #7333FF 100%);
 }
 
 .app-store-button i {
@@ -166,11 +170,25 @@ nav a:hover {
     background-color: #1A1F3D;
 }
 
-.features h2 {
+.features h2, .interface h2, .testimonials h2, .download h2 {
     text-align: center;
     font-size: 36px;
     margin-bottom: 60px;
-    color: #6516FF;
+    color: white;
+    position: relative;
+    display: inline-block;
+}
+
+.features h2::after, .interface h2::after, .testimonials h2::after, .download h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: #6516FF;
+    border-radius: 2px;
 }
 
 .feature-grid {
@@ -200,7 +218,7 @@ nav a:hover {
 .feature-card h3 {
     font-size: 24px;
     margin-bottom: 15px;
-    color: #6516FF;
+    color: white;
 }
 
 .feature-card p {
@@ -211,13 +229,6 @@ nav a:hover {
 .testimonials {
     padding: 100px 0;
     background-color: #0F132A;
-}
-
-.testimonials h2 {
-    text-align: center;
-    font-size: 36px;
-    margin-bottom: 60px;
-    color: #6516FF;
 }
 
 .testimonial-grid {
@@ -246,7 +257,7 @@ nav a:hover {
 }
 
 .author {
-    color: #6516FF;
+    color: white;
     font-weight: 600;
 }
 
@@ -322,7 +333,7 @@ nav a:hover {
 
 .interface-item h3 {
     font-size: 24px;
-    color: #FF6B6B;
+    color: white;
     margin-bottom: 15px;
 }
 
@@ -349,7 +360,7 @@ footer {
 .footer-logo {
     font-size: 24px;
     font-weight: bold;
-    color: #6516FF;
+    color: white;
 }
 
 .footer-links {
@@ -422,4 +433,158 @@ footer {
         font-size: 18px;
         padding: 0 20px;
     }
+}
+
+/* Popup Styles */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(15, 19, 42, 0.9);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px);
+}
+
+.popup-content {
+    background: linear-gradient(135deg, #1A1F3D 0%, #2A305D 100%);
+    padding: 40px;
+    border-radius: 20px;
+    position: relative;
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    animation: popupIn 0.3s ease-out;
+}
+
+@keyframes popupIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.popup-content h3 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: white;
+    font-weight: 700;
+}
+
+.popup-content p {
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 30px;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.popup-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.popup-form input {
+    padding: 12px 20px;
+    border: 2px solid rgba(101, 22, 255, 0.3);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.popup-form input:focus {
+    outline: none;
+    border-color: #6516FF;
+}
+
+.popup-form button {
+    background: linear-gradient(135deg, #6516FF 0%, #8444FF 100%);
+    color: white;
+    border: none;
+    padding: 14px 30px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(101, 22, 255, 0.3);
+    width: 100%;
+}
+
+.popup-form button:hover {
+    background: linear-gradient(135deg, #5612e0 0%, #7333FF 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(101, 22, 255, 0.4);
+}
+
+.close-popup {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 28px;
+    cursor: pointer;
+    padding: 5px;
+    line-height: 1;
+    transition: color 0.3s ease;
+}
+
+.close-popup:hover {
+    color: white;
+}
+
+/* Mobile Responsiveness for Popup */
+@media (max-width: 768px) {
+    .popup-content {
+        padding: 30px 20px;
+        width: 95%;
+    }
+
+    .popup-content h3 {
+        font-size: 24px;
+    }
+
+    .popup-content p {
+        font-size: 16px;
+    }
+}
+
+/* Add trust indicators */
+.trust-badges {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.trust-badge {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 14px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 10px 20px;
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+}
+
+.trust-badge i {
+    color: #FF6B6B;
+    font-size: 20px;
 } 

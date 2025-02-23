@@ -1,0 +1,12 @@
+# Dependencies
+node_modules
+
+# Development files
+.git
+.gitignore
+README.md
+build.sh
+
+# Exclude everything except the public directory
+/*
+!/public 
